@@ -1,0 +1,51 @@
+ .introdu {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: grid; /*deixa em grade, "libera para colocar um ao lado do outro*/
+    grid-template-columns: 1fr 2fr; /* colocou uma coluna ao lado da outra. Por exemplo 1fr= um na primeira coluna, 2fr significa que fica dois ao lado do primeiro, porém no 2 fica um encima do outro.*/
+    gap: 100px;
+    align-items: center;
+}
+.introdu h1 {
+    font-size: 4.5rem;
+    line-height: 1.125;
+    margin-bottom: 30px;
+    position: relative;
+}
+.introdu h1::before {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 100px;
+    background: url(../detalhe.svg) no-repeat center;
+    position: absolute;
+    top: -15px;
+    left: -40px;
+    z-index: -1;
+}
+.introdu p{
+    font-size: 1.5rem;
+    color: #5252;
+}
+@media(max-width:100px) {
+    .introdu h1 {
+        grid-template-columns: 1fr 1fr; /*coloca-se ese para ajustar em uma coluna*/
+        gap: 40px;
+    }
+    .introdu h1 ::before {/*acho que before é o elemento*/
+        font-size: 32px;
+        width: 30px;
+        height: 10px;
+        left: 0px;
+    }
+    
+    }
+@media (max-width: 800px) {
+   .introdu{
+    grid-template-columns: 1fr;
+   }
+    .introdu {
+    display: none;
+   } 
+}
